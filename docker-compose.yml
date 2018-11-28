@@ -1,0 +1,42 @@
+version: '2'
+
+services:
+  platforme:
+    build: .
+    restart: always
+    container_name:
+      cybertrace_web
+
+    networks:
+      - ctfd_default
+
+  cache:
+    image: redis:4
+    restart: always
+    volumes:
+    - .data/redis:/data
+    networks:
+        internal:
+        default:
+  db:
+    image: mariadb:10.2
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=cybertrace
+      - MYSQL_USER=cybertrace
+      - MYSQL_PASSWORD=cybertrace
+    container_name:
+      cybertrace_db
+    volumes:
+      - .data/mysql:/var/lib/mysql
+    networks:
+        internal:
+    # This command is required to set important mariadb defaults
+    command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci, --wait_timeout=28800, --log-warnings=0]
+
+networks:
+  default:    
+  ctfd_default:
+    external: true
+  internal:
+    internal: true

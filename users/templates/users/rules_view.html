@@ -1,0 +1,11 @@
+{# -*- eval: (web-mode-set-engine "django") -*- #}
+{% extends "wagtailadmin/base.html" %}
+
+{% block content %}
+    <embed src="{{ request.scheme }}://{{ request.get_host }}/view{{ file.url }}" type='application/pdf' width="100%" height="100%" style="position:absolute;" />
+{% endblock %}
+
+
+
+
+

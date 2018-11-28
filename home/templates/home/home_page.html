@@ -1,0 +1,203 @@
+{# -*- eval: (web-mode-set-engine "django") -*- #}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Cybertrace club</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+
+	<!-- Custom fonts for this template -->
+	<link href="{% static  "vendor/fontawesome-free/css/all.min.css" %}" rel="stylesheet">
+	<link rel="stylesheet" href={% static "vendor/simple-line-icons/css/simple-line-icons.css" %}>
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+
+	<!-- Custom styles for this template -->
+	<link href="{% static "css/new-age.css" %}" rel="stylesheet">
+
+    </head>
+
+    <body id="page-top">
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+	    <div class="container">
+		<a class="navbar-brand js-scroll-trigger" href="#page-top">Cybertrace club</a>
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+		    Menu
+		    <i class="fas fa-bars"></i>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+		    <ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+			    <a class="nav-link js-scroll-trigger" href="#presentation">Presnetation</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link js-scroll-trigger" href="#whatwedo">What we do</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+			</li>
+			<li class="nav-item">
+			    <a class="nav-link js-scroll-trigger" href="">Blog</a>
+			</li>
+		    </ul>
+		</div>
+	    </div>
+	</nav>
+
+	<header class="masthead">
+	    <div class="container h-100">
+		<div class="row h-100">
+		    <div class="col-lg-7 my-auto">
+			<div class="header-content mx-auto">
+			    <h1 class="mb-5">Cybertrace club, <p>A university club specialized in computer security</p></h1>
+			    <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Contact us!</a>
+			</div>
+		    </div>
+		</div>
+	    </div>
+	</header>
+
+	<section class="presentation bg-primary text-center" id="presentation">
+	    <div class="container">
+		<div class="row">
+		    <div class="col-md-8 mx-auto">
+			<h2 class="section-heading">Presentation</h2>
+			<p>Cybertrace club is a computer security club, it was founded by students from ISSAT Sousse in 2017, we hold weekly workshops to teach infosec skills like: Exploitation, reverse engineering and cryptoanalysis, we also participate in and organize related events.</p>
+		    </div>
+		</div>
+	    </div>
+	</section>
+
+	<section class="features" id="whatwedo">
+	    <div class="container">
+		<div class="section-heading text-center">
+		    <h2>Our activities</h2>
+		    <p class="text-muted">Check out what we do</p>
+		    <hr>
+		</div>
+		<div class="row">
+		    <div class="col-lg-4">
+			<div class="feature-item">
+			    <i class="icon-event text-primary"></i>
+			    <h3>Events</h3>
+			    <p class="text-muted">We organize infosec events</p>
+			</div>
+		    </div>
+		    <div class="col-lg-4">
+			<div class="feature-item">
+			    <i class="icon-flag text-primary"></i>
+			    <h3>Capture the flag</h3>
+			    <p class="text-muted">We organize and participate in CTFs</p>
+			</div>
+		    </div>
+		    <div class="col-lg-4">
+			<div class="feature-item">
+			    <i class="icon-note text-primary"></i>
+			    <h3>Workshops</h3>
+			    <p class="text-muted">We organize weekly workshops for our members</p>
+			</div>
+		    </div>
+		</div>
+	    </div>
+	</section>
+
+	<section class="contact bg-primary" id="contact">
+	    
+	    <div class="container">
+		<div class="row">
+		    <div class="col-lg-4" id="social-media">
+			<h2>We
+			    <i class="fas fa-heart"></i>
+			    new friends!</h2>
+			<ul class="list-inline list-social">
+			    <li class="list-inline-item social-twitter">
+				<a href="#">
+				    <i class="fab fa-twitter"></i>
+				</a>
+			    </li>
+			    <li class="list-inline-item social-facebook">
+				<a href="https://www.facebook.com/ISSATSo-Cyber-Trace-Club-118970855459443/">
+				    <i class="fab fa-facebook-f"></i>
+				</a>
+			    </li>
+			    <li class="list-inline-item social-github">
+				<a href="https://github.com/cybertracetn">
+				    <i class="fab fa-github"></i>
+				</a>
+			    </li>
+			</ul>
+		    </div>
+		    <div class="col-lg-8">
+			<form class="form" id="contact-form" method="post" action="">
+			    <div class="messages"></div>
+			    <div class="controls">				    
+				<div class="row">
+				    <div class="col-lg-6">
+					<div class="form-group">
+					    <input id="form_name" type="text" name="name" placeholder="Name" required="required" class="form-control">
+					</div>
+					<div class="form-group">
+					    <input id="form_email" type="email" name="email" placeholder="Email" required="required" class="form-control">
+					</div>
+					<div class="form-group">
+					    <input id="form_subject" type="text" name="subject" placeholder="Subject" class="form-control">
+					</div>
+				    </div>
+				    <div class="col-lg-6">
+					<div class="form-group">
+					    <textarea id="form_message" name="message" placeholder="Message" rows="4" style="width: 100%;" class="form-control"
+						      required="required"></textarea>
+					</div>
+				    </div>
+				    <div class="col-md-12 text-center">
+					<button type="submit" class="form-control"><span>Send Message</span></button>
+				    </div>
+				</div>
+			    </div>
+			</form>
+		    </div>
+		    
+		</div>
+	    </div>
+	</section>
+
+	<section class="cta">
+
+	    <div class="mapouter">
+		<div class="gmap_canvas">
+		    <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=issat%20sousse&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+		</div>
+		
+	    </div>
+	</section>
+
+	<footer>
+	    <div class="container">
+		<p> <span class="copyleft"> &copy; </span> Cybertrace Copyleft</p>
+	    </div>
+	</footer>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="{% static "vendor/jquery/jquery.min.js" %}"></script>
+	<script src="{% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+
+	<!-- Plugin JavaScript -->
+	<script src="{% static "vendor/jquery-easing/jquery.easing.min.js" %}"></script>
+
+	<!-- Custom scripts for this template -->
+	<script src="{% static "js/new-age.js" %}"></script>
+
+    </body>
+
+</html>
