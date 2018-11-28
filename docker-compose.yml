@@ -4,11 +4,18 @@ services:
   platforme:
     build: .
     restart: always
-    container_name:
-      cybertrace_web
-
+    environment:
+      - DJANGO_SETTINGS_MODULE=cybertrace.settings.production
+    depends_on:
+      - db
+    volumes:
+      - .data/logs:/var/log
+      - .data/static:/code/static
+      - .data/media:/code/media
     networks:
-      - ctfd_default
+      ctfd_default:
+      default:
+      internal:
 
   cache:
     image: redis:4
@@ -25,12 +32,15 @@ services:
       - MYSQL_ROOT_PASSWORD=cybertrace
       - MYSQL_USER=cybertrace
       - MYSQL_PASSWORD=cybertrace
-    container_name:
-      cybertrace_db
+      - MYSQL_DATABASE=cybertrace_web
     volumes:
       - .data/mysql:/var/lib/mysql
     networks:
         internal:
+          aliases:
+            - db
+    ports:
+      - "3306:3306"
     # This command is required to set important mariadb defaults
     command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci, --wait_timeout=28800, --log-warnings=0]
 
