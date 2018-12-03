@@ -1,0 +1,30 @@
+
+
+* How to help
+  Please see the [[https://github.com/cybertracetn/cybertrace_web/issues][issues]].
+* How to work on this
+
+  Clone the repository
+  
+  #+BEGIN_SRC bash
+  git clone https://github.com/cybertracetn/cybertrace_web.git
+  #+END_SRC
+
+  Install the requirements
+
+  #+BEGIN_SRC bash
+  pip install -r requirements.txt
+  #+END_SRC
+  
+
+  Make the database migrations
+
+  #+BEGIN_SRC bash
+  python manage.py makemigrations
+  python manage.py migrate
+  #+END_SRC
+
+  Run the server
+  #+BEGIN_SRC bash
+  python manage.py runserver
+  #+END_SRC

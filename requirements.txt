@@ -4,3 +4,5 @@ Django>=2.1,<2.2
 wagtail>=2.3,<2.4
 pymysql
 mysql
+-e git+https://github.com/cybertracetn/wagtailsurveys.git
+django-crispy-forms==1.7.2
